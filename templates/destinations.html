@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Bobby's Where Can I Go From Here App</title>
+{% if airport and airline %}
+  <h1>Hello!</h1>
+  <h2>{{airline}} flies from {{airport.code}}: {{airport.name}} to the following places:</h2>
+    <h3>
+    <ul>
+        {% for destination in destinations%}
+            <li>{{destination.code}}: {{destination.name}}, {{destination.city}}, {{destination.country}}</li>
+        {% endfor %}    
+    </ul>
+    </h3>
+{% else %}
+  <h1>Hello World!</h1>
+{% endif %}
